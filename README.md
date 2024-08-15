@@ -36,7 +36,9 @@ Follow the instructions at `https://trill.readthedocs.io/en/latest/home.html` to
 
 `micromamba install -c pyg pyg pytorch-cluster pytorch-sparse pytorch-scatter`
 
-`pip install git+https://github.com/martinez-zacharya/lightdock.git@03a8bc4888c0ff8c98b7f0df4b3c671e3dbf3b1f git+https://github.com/martinez-zacharya/ECPICK.git setuptools==69.5.1`
+`pip install git+https://github.com/martinez-zacharya/lightdock.git@03a8bc4888c0ff8c98b7f0df4b3c671e3dbf3b1f` 
+
+`git+https://github.com/martinez-zacharya/ECPICK.git setuptools==69.5.1`
 
 3. Next install TRILL
 
@@ -51,3 +53,15 @@ Follow the instructions at `https://trill.readthedocs.io/en/latest/home.html` to
 `pip install scipy`
 
 This will set-up the environment and now we are within the TRILL environment
+
+## Scripts
+
+1. `run_train_embed.sh`: Run the script with `bash run_train_embed.sh` \
+    Input: Path to the traiing fasta file needs to be specified in the script. \
+    Output: Will generate feature vector representation for training set using PLMs such as ESM, Ankh, ProstT5 available through TRILL in the `Results` directory. 
+
+2. `run_train_xgboost_classifier.sh`: Run the script with `bash run_train_xgboost_classifier.sh` \
+    Input: Feature vector representation and training label keys to be specified in the script. \
+    Output: 2d-UMAP visualization of proteins for each PLM vector representation in the `Results` folder and 10-fold cross-validated XGBoost model in `Models/XGBoost` folder. \
+    Hyper-parameters: 75% of data used for traiing, no of estimators set to 200 and weighted F1 metric used to handle class imbalance in training set.
+   
