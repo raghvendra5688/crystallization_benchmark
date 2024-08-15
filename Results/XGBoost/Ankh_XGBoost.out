@@ -1,0 +1,12 @@
+TRILL command used: /home/brc05/micromamba/envs/TRILL/bin/trill --outdir XGBoost --n_workers 40 Ankh 1 classify XGBoost Data/Crystallization/crystallization_train.fasta --emb_model Ankh --preComputed_Embs Results/crystallization_Ankh_AVG.csv --train_split 0.75 --sweep --sweep_cv 10 --n_estimators 200 --f1_avg_method weighted --key Data/Crystallization/train_key.csv
+
+Classes trained on: ['crystallizable' 'non-crystallizable']
+
+Best sweep params: OrderedDict([('booster', 'gbtree'), ('colsample_bylevel', 0.6), ('colsample_bytree', 0.6), ('gamma', 0.4), ('learning_rate', 0.1), ('max_depth', 11), ('min_child_weight', 5), ('n_estimators', 100), ('reg_alpha', 12.8), ('reg_lambda', 12.8), ('subsample', 1.0)])
+
+Best sweep F1 score: 0.8626099583826056
+
+weighted-averaged classification metrics:
+	Precision: 0.7989069734907818
+	Recall: 0.7964071856287425
+	F-score: 0.7975842060510377

@@ -1,0 +1,12 @@
+TRILL command used: /home/brc05/micromamba/envs/TRILL/bin/trill --outdir XGBoost --n_workers 40 esm2_t36_3B 1 classify XGBoost Data/Crystallization/crystallization_train.fasta --emb_model esm2_t36_3B --preComputed_Embs Results/crystallization_esm2_t36_3B_AVG.csv --train_split 0.75 --sweep --sweep_cv 10 --n_estimators 200 --f1_avg_method weighted --key Data/Crystallization/train_key.csv
+
+Classes trained on: ['crystallizable' 'non-crystallizable']
+
+Best sweep params: OrderedDict([('booster', 'gbtree'), ('colsample_bylevel', 0.8), ('colsample_bytree', 0.8), ('gamma', 0.4), ('learning_rate', 0.15), ('max_depth', 10), ('min_child_weight', 7), ('n_estimators', 130), ('reg_alpha', 0.4), ('reg_lambda', 0.8), ('subsample', 0.9)])
+
+Best sweep F1 score: 0.8786441646485631
+
+weighted-averaged classification metrics:
+	Precision: 0.818811406993387
+	Recall: 0.8256428319830926
+	F-score: 0.8207918615704238
