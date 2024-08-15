@@ -18,38 +18,24 @@ Crystallization data in the Data/Crystallization folder including:
 ## Environment
 Follow the instructions at `https://trill.readthedocs.io/en/latest/home.html` to install TRILL, specifically:
 
-1. Set-up micromamba:
-
+1. Set-up micromamba: \
 `"${SHELL}" <(curl -L micro.mamba.pm/install.sh)`
 
-2. Once micromamba is ready, set-up pre-requisties for TRILL
+2. Once micromamba is ready, set-up pre-requisties for TRILL \
+`micromamba create -n TRILL python=3.10 ; micromamba activate TRILL` \
+`micromamba install -c pytorch -c nvidia pytorch=2.1.2 pytorch-cuda=12.1 torchdata` \
+`micromamba install -c conda-forge openbabel pdbfixer swig openmm smina fpocket vina openff-toolkit openmmforcefields setuptools=69.5.1` \
+`micromamba install -c bioconda foldseek pyrsistent` \
+`micromamba install -c "dglteam/label/cu121" dgl` \
+`micromamba install -c pyg pyg pytorch-cluster pytorch-sparse pytorch-scatter` \
+`pip install git+https://github.com/martinez-zacharya/lightdock.git@03a8bc4888c0ff8c98b7f0df4b3c671e3dbf3b1f` `git+https://github.com/martinez-zacharya/ECPICK.git setuptools==69.5.1`
 
-`micromamba create -n TRILL python=3.10 ; micromamba activate TRILL`
-
-`micromamba install -c pytorch -c nvidia pytorch=2.1.2 pytorch-cuda=12.1 torchdata`
-
-`micromamba install -c conda-forge openbabel pdbfixer swig openmm smina fpocket vina openff-toolkit openmmforcefields setuptools=69.5.1`
-
-`micromamba install -c bioconda foldseek pyrsistent`
-
-`micromamba install -c "dglteam/label/cu121" dgl`
-
-`micromamba install -c pyg pyg pytorch-cluster pytorch-sparse pytorch-scatter`
-
-`pip install git+https://github.com/martinez-zacharya/lightdock.git@03a8bc4888c0ff8c98b7f0df4b3c671e3dbf3b1f` 
-
-`git+https://github.com/martinez-zacharya/ECPICK.git setuptools==69.5.1`
-
-3. Next install TRILL
-
+3. Next install TRILL \
 `pip install trill-proteins`
 
-4. Install additional packages:
-
-`pip install seaborn`
-
-`pip install scikit-learn`
-
+4. Install additional packages: \
+`pip install seaborn` \
+`pip install scikit-learn` \ 
 `pip install scipy`
 
 This will set-up the environment and now we are within the TRILL environment
