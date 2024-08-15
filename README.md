@@ -43,11 +43,11 @@ This will set-up the environment and now we are within the TRILL environment
 ## Scripts
 
 1. `run_train_embed.sh`: Run the script with `bash run_train_embed.sh` \
-    #Input: Path to the traiing fasta file needs to be specified in the script. \
-    #Output: Will generate feature vector representation for training set using PLMs such as ESM, Ankh, ProstT5 available through TRILL in the `Results` directory. 
+    **Input**: Path to the traiing fasta file needs to be specified in the script. \
+    **Output**: Will generate feature vector representation for training set using PLMs such as ESM, Ankh, ProstT5 available through TRILL in the `Results` directory. 
 
 2. `run_train_xgboost_classifier.sh`: Run the script with `bash run_train_xgboost_classifier.sh` \
-    #Input: Feature vector representation and training label keys to be specified in the script. \
-    #Output: 2d-UMAP visualization of proteins for each PLM vector representation in the `Results` folder and 10-fold cross-validated XGBoost model in `Models/XGBoost` folder. \
-    #Hyper-parameters: 75% of data used for traiing, no of estimators set to 200 and weighted F1 metric used to handle class imbalance in training set.
+    **Input**: Feature vector representation and training label keys to be specified in the script. \
+    **Output**: 2d-UMAP visualization of proteins for each PLM vector representation in the `Results` folder and 10-fold cross-validated XGBoost model in `Models/XGBoost` folder. \
+    **Hyper-parameters**: 75% of data used for traiing, no of estimators set to 200 and weighted F1 metric used to handle class imbalance in training set.
    
