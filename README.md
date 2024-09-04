@@ -69,8 +69,9 @@ The user is expected to follow the instructions below and generate the results i
     **Input**: Path to test fasta, feature vector representations for test set, path to XGBoost model and test set label key. \
     **Output**: XGBoost class predictions, XGBoost logits [probability] prediction and a log file in `Results/XGBoost' folder.
 
-7. `fb_lgbm_crystal.py`: Run the script with `python fb_lgbm_crystal.py`. \ 
-    **Input**: Path to feature representations for train and test sets for each PLM. \
+
+7. `fb_lgbm_crystal.py`: Run the script with `python fb_lgbm_crystal.py`.  \ 
+    **Input**: Path to feature representations for train and test sets for each PLM.  \
     **Output**: Cross-validated LightGBM models for each PLM with optimized hyper-parameters and test predictions for each test set in the `Results` folder. \
     **Hyper-parameters**: A grid of hyper-parameters including `n_estimators`, `max_depth`, `num_leaves`, `min_child_samples`, `learning_rate`, `subsample`, `colsample_by_tree`, `reg_alpha` and `reg_lambda` is provided in the script.
 
