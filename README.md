@@ -70,12 +70,12 @@ The user is expected to follow the instructions below and generate the results i
     **Output**: XGBoost class predictions, XGBoost logits [probability] prediction and a log file in `Results/XGBoost' folder.
 
 
-7. `fb_lgbm_crystal.py`: Run the script with `python fb_lgbm_crystal.py`.  \ 
+7. `fb_lgbm_crystal.py`: Run the script with `python fb_lgbm_crystal.py`. \
     **Input**: Path to feature representations for train and test sets for each PLM.  \
     **Output**: Cross-validated LightGBM models for each PLM with optimized hyper-parameters and test predictions for each test set in the `Results` folder. \
     **Hyper-parameters**: A grid of hyper-parameters including `n_estimators`, `max_depth`, `num_leaves`, `min_child_samples`, `learning_rate`, `subsample`, `colsample_by_tree`, `reg_alpha` and `reg_lambda` is provided in the script.
 
-8. `gen_embed_xgb_classify_cry_proteins.sh`: Run the script with `bash gen_embed_xgb_classify_cry_proteins.sh`. \
+9. `gen_embed_xgb_classify_cry_proteins.sh`: Run the script with `bash gen_embed_xgb_classify_cry_proteins.sh`. \
     **Input**: Path to crystallizable protein fasta file used for fine-tuning ProtGPT2. \
     **Output**: a) Fine-tuned ProtGPT2 model for crystallization class \
                 b) Set of 3000 synthetic proteins generated through fine-tuned ProtGPT2 model \
@@ -83,7 +83,7 @@ The user is expected to follow the instructions below and generate the results i
                 d) XGBoost predictions for these proteins for each PLM in the `Results/XGBoost` folder \
                 e) 2D-UMAP representations of these proteins along with the labels predicted by individual XGBoost classifier.
 
-9. `combine_generated_proteins.py`: Run the script with `python combine_generated_proteins.py`. \
+10. `combine_generated_proteins.py`: Run the script with `python combine_generated_proteins.py`. \
    **Input**: XGBoost predictions for each PLM for the generated proteins. \
    **Output**: A dataframe with the consensus of the predictions of all the PLM models and final label assignment for each protein deposited in the `Results` folder.
 
