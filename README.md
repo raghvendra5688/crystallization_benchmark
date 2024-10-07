@@ -47,42 +47,43 @@ The user is expected to follow the instructions below and generate the results i
     **Input**: Path to the training fasta file needs to be specified in the script. \
     **Output**: Will generate feature vector representation for training set using PLMs such as ESM, Ankh, ProstT5 available through TRILL in the `Results` directory. 
 
-2. `run_train_xgboost_classifier.sh`: Run the script with `bash run_train_xgboost_classifier.sh` \
+2. `run_train_xgboost_classifier.sh`: Run the script with `bash run_train_xgboost_classifier.sh`. \
     **Input**: Feature vector representation and training label keys to be specified in the script. \
     **Output**: 2d-UMAP visualization of proteins for each PLM vector representation in the `Results` folder and 10-fold cross-validated XGBoost model in `Models/XGBoost` folder. \
     **Hyper-parameters**: 75% of data used for traiing, no of estimators set to 200 and weighted F1 metric used to handle class imbalance in training set.
 
-3. `run_test_embed.sh`: Run the script with `bash run_test_embed.sh` \
+3. `run_test_embed.sh`: Run the script with `bash run_test_embed.sh`. \
     **Input**: Path to test fasta file and test key file to be specified in the script. \
     **Output**: Feature vectors are generated for test set and placed in `Results` folder along with 2D-UMAP visualizations for each PLM.
 
-4. `run_test_sp_embed.sh`: Run the script with `bash run_test_sp_embed.sh` \
+4. `run_test_sp_embed.sh`: Run the script with `bash run_test_sp_embed.sh`. \
     **Input**: Path to SP test fasta file and SP test key file to be specified in the script. \
     **Output**: Feature vectors are generated for SP test set and placed in `Results` folder along with 2D-UMAP visualizations for each PLM.
 
 
-5. `run_test_tr_embed.sh`: Run the script with `bash run_test_tr_embed.sh` \
+5. `run_test_tr_embed.sh`: Run the script with `bash run_test_tr_embed.sh`. \
     **Input**: Path to TR test fasta file and TR test key file to be specified in the script. \
     **Output**: Feature vectors are generated for TR test set and placed in `Results` folder along with 2D-UMAP visualizations for each PLM.
 
-6. `run_xgboost_all_test_predictions.sh`: Run the script with `run_xgboost_all_test_predictions.sh` \
+6. `run_xgboost_all_test_predictions.sh`: Run the script with `run_xgboost_all_test_predictions.sh`. \
     **Input**: Path to test fasta, feature vector representations for test set, path to XGBoost model and test set label key. \
     **Output**: XGBoost class predictions, XGBoost logits [probability] prediction and a log file in `Results/XGBoost' folder.
 
-7. `fb_lgbm_crystal.py`: Run the script with `python fb_lgbm_crystal.py` \ 
-    **Input**: Path to feature representations for train and test sets for each PLM. \
+
+7. `fb_lgbm_crystal.py`: Run the script with `python fb_lgbm_crystal.py`. \
+    **Input**: Path to feature representations for train and test sets for each PLM.  \
     **Output**: Cross-validated LightGBM models for each PLM with optimized hyper-parameters and test predictions for each test set in the `Results` folder. \
     **Hyper-parameters**: A grid of hyper-parameters including `n_estimators`, `max_depth`, `num_leaves`, `min_child_samples`, `learning_rate`, `subsample`, `colsample_by_tree`, `reg_alpha` and `reg_lambda` is provided in the script.
 
-8. `gen_embed_xgb_classify_cry_proteins.sh`: Run the script with `bash gen_embed_xgb_classify_cry_proteins.sh` \
-    **Input**: Path to crystallizable protein fasta file used for fine-tuning ProtGPT2 \
+9. `gen_embed_xgb_classify_cry_proteins.sh`: Run the script with `bash gen_embed_xgb_classify_cry_proteins.sh`. \
+    **Input**: Path to crystallizable protein fasta file used for fine-tuning ProtGPT2. \
     **Output**: a) Fine-tuned ProtGPT2 model for crystallization class \
                 b) Set of 3000 synthetic proteins generated through fine-tuned ProtGPT2 model \
                 c) Feature vector representations for these proteins through each PLM and deposited in `Results` folder \
                 d) XGBoost predictions for these proteins for each PLM in the `Results/XGBoost` folder \
                 e) 2D-UMAP representations of these proteins along with the labels predicted by individual XGBoost classifier.
 
-9. `combine_generated_proteins.py`: Run the script with `python combine_generated_proteins.py` \
+10. `combine_generated_proteins.py`: Run the script with `python combine_generated_proteins.py`. \
    **Input**: XGBoost predictions for each PLM for the generated proteins. \
    **Output**: A dataframe with the consensus of the predictions of all the PLM models and final label assignment for each protein deposited in the `Results` folder.
 
