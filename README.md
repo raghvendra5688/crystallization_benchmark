@@ -1,5 +1,7 @@
 ## Benchmarking Open PLM available via TRILL for Protein Crystallization Prediction
 
+[Crystallization Workflow][Results/TRILL_Crystallization_Workflow_v2.pdf]
+
 The goal of the project is to benchmark open-source protein language models (PLM) available through TRILL for:
 1. Protein crystallization prediction using raw protein sequences as input.
 2. Show power of protein language model which can fit on a single 48Gb GPU for a downstream protein property prediction task.
