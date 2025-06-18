@@ -1,6 +1,6 @@
 ## Benchmarking Open PLM available via TRILL for Protein Crystallization Prediction
 
-<script src="https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl"></script>
+![Crystallization Workflow](Results/TRILL_Crystallization_Workflow_v2.jpg)
 
 The goal of the project is to benchmark open-source protein language models (PLM) available through TRILL for:
 1. Protein crystallization prediction using raw protein sequences as input.
